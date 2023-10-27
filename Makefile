@@ -17,10 +17,10 @@ run: main
 	@./main
 
 main: main.o
-	$(CXX) main.o -o main
+	@$(CXX) main.o -o main
 
 main.o: main.cpp
-	$(CXX) -c main.cpp
+	@$(CXX) -c main.cpp
 
 # removes all .o files and main executable
 clean:
