@@ -4,7 +4,7 @@ class User {
     public:
     
     User() {
-        this->monthlyRent = 0.00;
+        this->newBalance = 0.00;
         this->startingBalance = 0.00;
         this->monthlyRent = 0.00;
         this->name = "";
@@ -55,8 +55,24 @@ void User::setMonthlyRent(float monthlyRentInput) {
 
 void getUserInfo(User currentUser) {
     std::string nameInput;
+    float rentInput;
+    float bankBalance;
     
     std::cout << "What is your name?: ";
     std::cin >> nameInput;
     currentUser.setName(nameInput);
+
+    std::cout << "What is your monthly rent?: ";
+    std::cin >> rentInput;
+    currentUser.setMonthlyRent(rentInput);
+
+    std::cout << "What is your bank account balance?: ";
+    std::cin >> bankBalance;
+    currentUser.setStartingBalance(bankBalance);
+}
+
+float calculateTrueBalnce(User currentUser) {
+    currentUser.setNewBalance(currentUser.getStartingBalance() - 
+            currentUser.getMonthlyRent());
+    return currentUser.getNewBlance();
 }

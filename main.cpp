@@ -7,7 +7,10 @@ int main(int argc, char* argv[]) {
     startPrompt();
     User* currentUser = new User();
     getUserInfo(*currentUser);
+    std::cout << currentUser->getName() << "your true balance is: " 
+        << calculateTrueBalnce(*currentUser) << std::endl;
 
+    delete currentUser;
     return 0;
 }
 
