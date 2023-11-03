@@ -1,6 +1,8 @@
 #include <iostream>
 #include "user.h"
 
+void startPrompt();
+
 int main(int argc, char* argv[]) {
     startPrompt();
     User* currentUser = new User();
